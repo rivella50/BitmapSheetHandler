@@ -27,20 +27,21 @@ var multiPaths:Object = new Object();
 multiPaths['bitmapPath'] = "assets/balls_48.png";
 multiPaths['jsonPath'] = "assets/balls_48.json";
 multiConfig[BitmapSheetHandler.DPI_160] = multiPaths;
+
 multiPaths = new Object();
 multiPaths['bitmapPath'] = "assets/balls_64.png";
 multiPaths['jsonPath'] = "assets/balls_64.json";
 multiConfig[BitmapSheetHandler.DPI_240] = multiPaths;
+
 multiPaths = new Object();
 multiPaths['bitmapPath'] = "assets/balls_128.png";
 multiPaths['jsonPath'] = "assets/balls_128.json";
 multiConfig[BitmapSheetHandler.DPI_320] = multiPaths;
+
 multiSheetHandler.importBitmapSheet(multiConfig);
 multiSheetHandler.addEventListener(Event.COMPLETE, onCompleteMulti);
 
-p.
-	 
-# If you only have one sheet to handle use DPI_SINGLE, else one of the existing DPI_160, DPI_240 or DPI_320 constants
+p. # If you only have one sheet to handle use DPI_SINGLE, else one of the existing DPI_160, DPI_240 or DPI_320 constants
 # You get notified when the last combination has finished importing, where you can then ask the handler for Bitmap or MultiDPIBitmapSource copies:
 
 bc.. var bitmap:Bitmap = sheetHandler.getImageSource("basket_ball", false) as Bitmap;
