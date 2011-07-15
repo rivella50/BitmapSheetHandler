@@ -41,7 +41,8 @@ multiConfig[BitmapSheetHandler.DPI_320] = multiPaths;
 multiSheetHandler.importBitmapSheet(multiConfig);
 multiSheetHandler.addEventListener(Event.COMPLETE, onCompleteMulti);
 
-p. # If you only have one sheet to handle use DPI_SINGLE, else one of the existing DPI_160, DPI_240 or DPI_320 constants
+p. 
+# If you only have one sheet to handle use DPI_SINGLE, else one of the existing DPI_160, DPI_240 or DPI_320 constants
 # You get notified when the last combination has finished importing, where you can then ask the handler for Bitmap or MultiDPIBitmapSource copies:
 
 bc.. var bitmap:Bitmap = sheetHandler.getImageSource("basket_ball", false) as Bitmap;
