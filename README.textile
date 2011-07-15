@@ -1,0 +1,5 @@
+h2. BitmapSheetHandler
+
+Utility for Actionscript 3 and "TexturePacker":http://http://www.texturepacker.com/ users to handle their image sheets within a project.
+
+
