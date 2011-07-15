@@ -18,7 +18,6 @@ singlePaths['jsonPath'] = "assets/balls_48.json";
 singleConfig[BitmapSheetHandler.DPI_SINGLE] = singlePaths;
 sheetHandler.importBitmapSheet(singleConfig);
 sheetHandler.addEventListener(Event.COMPLETE, onCompleteSingle);
-	 
 
 or with multiple sheets to import into the same handler:
 
@@ -43,9 +42,7 @@ multiConfig[BitmapSheetHandler.DPI_320] = multiPaths;
 multiSheetHandler.importBitmapSheet(multiConfig);
 multiSheetHandler.addEventListener(Event.COMPLETE, onCompleteMulti);
 	 
-
 # If you only have one sheet to handle use DPI_SINGLE, else one of the existing DPI_160, DPI_240 or DPI_320 constants
-
 # You get notified when the last combination has finished importing, where you can then ask the handler for Bitmap or MultiDPIBitmapSource copies:
 
 bc.. var bitmap:Bitmap = sheetHandler.getImageSource("basket_ball", false) as Bitmap;
@@ -54,7 +51,6 @@ image.source = bitmap;
 image.x = 50; image.y = 50;
 addElement(image);
 
-	 
 or with multiple sheets you get back a MultiDPIBitmapSource:
 
 bc.. var bitmap:MultiDPIBitmapSource = multiSheetHandler.getImageSource("basket_ball", true) as MultiDPIBitmapSource;
