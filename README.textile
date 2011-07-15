@@ -1,6 +1,6 @@
 h2. BitmapSheetHandler
 
-Utility for Actionscript 3 and "TexturePacker":http://www.texturepacker.com/ users to handle their image sheets within a project.
+Utility for Actionscript 3 (Flash, Flex, AIR) and "TexturePacker":http://www.texturepacker.com/ users to handle their image sheets within a project.
 
 Works in web and desktop projects.
 
@@ -58,3 +58,8 @@ var image:Image = new Image();
 image.source = bitmap;
 image.x = 50; image.y = 150;
 addElement(image);
+
+h3. Useful links
+
+* "TexturePacker":http://www.texturepacker.com
+* "as3corelib":https://github.com/mikechambers/as3corelib for usage of JSONDecoder
