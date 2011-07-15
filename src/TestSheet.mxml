@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:mx="library://ns.adobe.com/flex/mx" creationComplete="creationCompleteHandler(event)"
+					   applicationDPI="160" >
+	
+	
+	<fx:Script>
+		<![CDATA[
+			
+			/**	
+				 BitmapSheetHandler
+				 
+				 Copyright (c) 2011 - Valentin Treu and contributors
+				 (see each file to see the different copyright owners)
+				 
+				 
+				 Permission is hereby granted, free of charge, to any person obtaining a copy
+				 of this software and associated documentation files (the "Software"), to deal
+				 in the Software without restriction, including without limitation the rights
+				 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+				 copies of the Software, and to permit persons to whom the Software is
+				 furnished to do so, subject to the following conditions:
+				 
+				 The above copyright notice and this permission notice shall be included in
+				 all copies or substantial portions of the Software.
+				 
+				 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+				 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+				 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+				 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+				 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+				 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+				 THE SOFTWARE.
+			 */
+			
+			import mx.events.FlexEvent;
+			
+			import spark.components.Image;
+			import spark.utils.MultiDPIBitmapSource;
+			
+			private var sheetHandler:BitmapSheetHandler;
+			private var multiSheetHandler:BitmapSheetHandler;
+			
+			protected function creationCompleteHandler(event:FlexEvent):void {
+				
+				// single
+				sheetHandler = new BitmapSheetHandler();
+				var singleConfig:Object = new Object();
+				var singlePaths:Object = new Object();
+				singlePaths['bitmapPath'] = "assets/balls_48.png";
+				singlePaths['jsonPath'] = "assets/balls_48.json";
+				singleConfig[BitmapSheetHandler.DPI_SINGLE] = singlePaths;
+				sheetHandler.importBitmapSheet(singleConfig);
+				sheetHandler.addEventListener(Event.COMPLETE, onCompleteSingle);
+				
+				// multi
+				multiSheetHandler = new BitmapSheetHandler();
+				var multiConfig:Object = new Object();
+				
+				var multiPaths:Object = new Object();
+				multiPaths['bitmapPath'] = "assets/balls_48.png";
+				multiPaths['jsonPath'] = "assets/balls_48.json";
+				multiConfig[BitmapSheetHandler.DPI_160] = multiPaths;
+				
+				multiPaths = new Object();
+				multiPaths['bitmapPath'] = "assets/balls_64.png";
+				multiPaths['jsonPath'] = "assets/balls_64.json";
+				multiConfig[BitmapSheetHandler.DPI_240] = multiPaths;
+				
+				multiPaths = new Object();
+				multiPaths['bitmapPath'] = "assets/balls_128.png";
+				multiPaths['jsonPath'] = "assets/balls_128.json";
+				multiConfig[BitmapSheetHandler.DPI_320] = multiPaths;
+				
+				multiSheetHandler.importBitmapSheet(multiConfig);
+				multiSheetHandler.addEventListener(Event.COMPLETE, onCompleteMulti);
+			}
+			
+			protected function onCompleteSingle(event:Event):void {
+				
+				var bitmap:Bitmap = sheetHandler.getImageSource("basket_ball", false) as Bitmap;
+				var image:Image = new Image();
+				image.source = bitmap;
+				image.x = 50; image.y = 50;
+				addElement(image);
+				
+				bitmap = sheetHandler.getImageSource("soccer_ball", false) as Bitmap;
+				image = new Image();
+				image.source = bitmap;
+				image.x = 150; image.y = 50;
+				addElement(image);
+			}
+			
+			protected function onCompleteMulti(event:Event):void {
+				
+				var bitmap:MultiDPIBitmapSource = multiSheetHandler.getImageSource("basket_ball", true) as MultiDPIBitmapSource;
+				var image:Image = new Image();
+				image.source = bitmap;
+				image.x = 50; image.y = 150;
+				addElement(image);
+				
+				bitmap = multiSheetHandler.getImageSource("soccer_ball", true) as MultiDPIBitmapSource;
+				image = new Image();
+				image.source = bitmap;
+				image.x = 150; image.y = 150;
+				addElement(image);
+			}
+			
+		]]>
+	</fx:Script>
+	
+</s:Application>

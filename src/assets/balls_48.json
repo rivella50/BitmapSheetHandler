@@ -1,0 +1,27 @@
+{"frames": {
+
+"basket_ball_48.png":
+{
+	"frame": {"x":0,"y":0,"w":46,"h":42},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":46,"h":42},
+	"sourceSize": {"w":48,"h":48}
+},
+"soccer_ball_48.png":
+{
+	"frame": {"x":0,"y":42,"w":46,"h":42},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":46,"h":42},
+	"sourceSize": {"w":48,"h":48}
+}
+}, 
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "balls_48.png",
+	"format": "RGBA8888",
+	"size": {"w":46,"h":84}
+}
+}
