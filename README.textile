@@ -19,7 +19,7 @@ singleConfig[BitmapSheetHandler.DPI_SINGLE] = singlePaths;
 sheetHandler.importBitmapSheet(singleConfig);
 sheetHandler.addEventListener(Event.COMPLETE, onCompleteSingle);
 
-bq. or with multiple sheets to import into the same handler:
+p. or with multiple sheets to import into the same handler:
 
 bc.. multiSheetHandler = new BitmapSheetHandler();
 var multiConfig:Object = new Object();	
@@ -38,7 +38,8 @@ multiConfig[BitmapSheetHandler.DPI_320] = multiPaths;
 multiSheetHandler.importBitmapSheet(multiConfig);
 multiSheetHandler.addEventListener(Event.COMPLETE, onCompleteMulti);
 
-bq.	 
+p.
+	 
 # If you only have one sheet to handle use DPI_SINGLE, else one of the existing DPI_160, DPI_240 or DPI_320 constants
 # You get notified when the last combination has finished importing, where you can then ask the handler for Bitmap or MultiDPIBitmapSource copies:
 
@@ -48,7 +49,7 @@ image.source = bitmap;
 image.x = 50; image.y = 50;
 addElement(image);
 
-bq. or with multiple sheets you get back a MultiDPIBitmapSource:
+p. or with multiple sheets you get back a MultiDPIBitmapSource:
 
 bc.. var bitmap:MultiDPIBitmapSource = multiSheetHandler.getImageSource("basket_ball", true) as MultiDPIBitmapSource;
 var image:Image = new Image();
