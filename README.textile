@@ -7,7 +7,7 @@ Works in web and desktop projects.
 
 h3. Usage
 
-1. Create your (different DPI) sheets and configs in TexturePacker and publish them into your project's asset folder
+1. Create your (different DPI) sheets and configs in TexturePacker and publish them into your project's asset folder using Data Format JSON.
 2. In your project create a separate Object config for every sheet/json combination:
 
 bc.. sheetHandler = new BitmapSheetHandler();
