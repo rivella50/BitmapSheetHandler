@@ -7,8 +7,8 @@ Works in web and desktop projects.
 
 h3. Usage
 
-# Create your (different DPI) sheets and configs in TexturePacker and publish them into your project's asset folder
-# In your project create a separate Object config for every sheet/json combination:
+1. Create your (different DPI) sheets and configs in TexturePacker and publish them into your project's asset folder
+2. In your project create a separate Object config for every sheet/json combination:
 
 bc.. sheetHandler = new BitmapSheetHandler();
 var singleConfig:Object = new Object();
@@ -42,8 +42,8 @@ multiSheetHandler.importBitmapSheet(multiConfig);
 multiSheetHandler.addEventListener(Event.COMPLETE, onCompleteMulti);
 
 p. 
-# If you only have one sheet to handle use DPI_SINGLE, else one of the existing DPI_160, DPI_240 or DPI_320 constants
-# You get notified when the last combination has finished importing, where you can then ask the handler for Bitmap or MultiDPIBitmapSource copies:
+3. If you only have one sheet to handle use DPI_SINGLE, else one of the existing DPI_160, DPI_240 or DPI_320 constants
+4. You get notified when the last combination has finished importing, where you can then ask the handler for Bitmap or MultiDPIBitmapSource copies:
 
 bc.. var bitmap:Bitmap = sheetHandler.getImageSource("basket_ball", false) as Bitmap;
 var image:Image = new Image();
